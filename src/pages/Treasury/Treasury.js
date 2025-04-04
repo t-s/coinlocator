@@ -27,7 +27,7 @@ export const Treasury = () => {
       );
 
       let bnbPrice = res.data.data['BNB']?.quote.USD.price;
-      if (typeof bnbPrice !== undefined) {
+      if (bnbPrice !== undefined) {
         let bnbValuable = ethers.utils.formatUnits(bnbBalance, 18) * bnbPrice;
         setBNBBalance('$' + bnbValuable.toFixed(1));
       } else {
